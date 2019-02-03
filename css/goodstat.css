@@ -1,0 +1,304 @@
+body {
+	background-color: #3bb6fd;
+}
+
+.padding10{padding: 10px;}
+
+.page-header {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	border-bottom: 1px solid #eee;
+	margin-bottom: 5px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 300;
+    line-height: 1.2;
+    color: inherit;
+}
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span {
+    font-size: 70%;
+    font-weight: 0;
+    color: #3192ca;
+    text-transform: uppercase;
+}
+
+.tresc, .tresc_zalogowany_jako {
+	background-color: #fff;
+	border: 1px solid #3192ca;
+    margin: 0 auto 20px;
+    opacity: 1;
+    padding: 20px;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+	border-radius: 2px;
+	border-width: 1px 1px 1px 5px;
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(0,0,0,0.07);
+	background-clip: padding-box;
+	
+    text-shadow: 1px 1px 2px #fff inset;
+    -moz-box-shadow: 1px 1px 2px #fff inset;
+    -webkit-box-shadow: 1px 1px 2px #fff inset;
+    box-shadow: 1px 1px 2px #fff inset;
+}
+.tresc { min-height:	600px; }
+
+.baner, .baner_instal {
+	border: 1px solid #3192ca;
+	margin: 0 auto 20px;
+	margin-top: 62px;
+    opacity: 1;
+    padding: 20px;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+	border-radius: 2px;
+	border-width: 1px 1px 1px 5px;
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(0,0,0,0.07);
+	background-clip: padding-box;
+	
+    text-shadow: 1px 1px 2px #fff inset;
+    -moz-box-shadow: 1px 1px 2px #fff inset;
+    -webkit-box-shadow: 1px 1px 2px #fff inset;
+    box-shadow: 1px 1px 2px #fff inset;
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+50,a3e2fc+100 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(left, rgba(255,255,255,1) 50%, rgba(163,226,252,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(255,255,255,1) 50%,rgba(163,226,252,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(255,255,255,1) 50%,rgba(163,226,252,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a3e2fc',GradientType=1 ); /* IE6-9 */
+}
+#tekst-baner{
+
+}
+#tekst-baner .blockquote {
+    margin-bottom: 0rem;
+    font-size: 1.rem;
+	color: #0569a0;
+}
+.baner { margin-top: 0px; }
+.baner_instal { margin-top: 10px; }
+.wersja { 
+	margin-top: 56px; 
+	
+	border: 0px solid #ddd;
+    opacity: 1;
+    padding: 5px 1px 0px 1px;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+	border-radius: 0px;
+	color: #256f9a;
+}
+
+.stopka {
+	color: #e9ecef;
+    margin: 0 auto 20px;
+    opacity: 1;
+    padding: 20px;
+     -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+	border-radius: 2px;
+	border-width: 1px 1px 1px 5px;
+	box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(0,0,0,0.07);
+	background-clip: padding-box;
+
+	background-color: #343a40;
+}
+.stopka a{
+	color: #fcb519;
+}
+.logo-baner{
+	text-align:	right;
+}
+
+/*----- clockbox ------*/
+.clockbox{
+    font-size: 14px;
+}
+#clockbox i {
+	font-size: 12px;
+}
+
+.jumbotron {
+    padding: 3rem 2rem;
+	
+    text-shadow: 1px 1px 2px #fff inset;
+    -moz-box-shadow: 1px 1px 2px #fff inset;
+    -webkit-box-shadow: 1px 1px 2px #fff inset;
+    box-shadow: 1px 1px 2px #fff inset;
+}
+
+.wykres {
+	display: block;
+	position: relative;
+	width: 1000px;
+	height: 260px;
+	background: url('../images/wykresy/tlo.png') no-repeat center 36px;
+	padding: 36px 0 0 0; margin: 0;
+	font-size: 12px;
+	font-family: sans-serif;
+}
+.row_wykres {
+	display: table-cell;
+    vertical-align: bottom;
+	padding: 0; margin: 0;
+}
+.row_slupki_poziom {
+	height: 16px;
+    padding: 0px 4px;
+    margin: 0px 0px;
+    color: #fff;
+	-webkit-border-radius: 0px 8px 8px 0px;
+	border-radius: 0px 8px 8px 0px;
+	font-family: 'Roboto',sans-serif;
+	font-size: 10px;
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4ca2ff+0,007bff+100 */
+background: rgb(76,162,255); /* Old browsers */
+background: -moz-linear-gradient(left, rgba(76,162,255,1) 0%, rgba(0,123,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(76,162,255,1) 0%,rgba(0,123,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(76,162,255,1) 0%,rgba(0,123,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4ca2ff', endColorstr='#007bff',GradientType=1 ); /* IE6-9 */
+
+
+}
+.row_slupki_poziom:hover {
+	background: rgb(0,123,255);
+}
+.row_slupki {
+	width: 16px;
+    padding: 0px;
+    margin: 0px 8px;
+    color: #fff;
+	-webkit-border-radius: 8px 8px 0 0;
+	border-radius: 8px 8px 0 0;
+	font-family: 'Roboto',sans-serif;
+	font-size: 10px;
+
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#007bff+0,4ca2ff+100 */
+background: rgb(0,123,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(0,123,255,1) 0%, rgba(76,162,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(0,123,255,1) 0%,rgba(76,162,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(0,123,255,1) 0%,rgba(76,162,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007bff', endColorstr='#4ca2ff',GradientType=0 ); /* IE6-9 */
+
+}
+.row_slupki:hover {
+	background: rgb(0,123,255);
+}
+.wykres-os-x {
+	font-size: 11px;
+	font-family: sans-serif;
+	color: #959594;
+}
+
+.page-item.disabled .page-link {
+    color: #dee2e6;
+}
+.pagination {
+	border-radius: .25rem;
+    border: 1px solid #dee2e6;
+	padding: 5px;
+}
+
+fieldset {
+	margin-top: 1em;
+    border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border: #aaa solid 1px;
+    padding: 0.5em;
+    background: #eee;
+    text-shadow: 1px 1px 2px #fff inset;
+    -moz-box-shadow: 1px 1px 2px #fff inset;
+    -webkit-box-shadow: 1px 1px 2px #fff inset;
+    box-shadow: 1px 1px 2px #fff inset;
+}
+fieldset.tblFooters {
+    margin-top: 0;
+    margin-bottom: .5em;
+    border-top: 0;
+    text-align: right;
+    float: none;
+    clear: both;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 5px;
+}
+.btn{
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+}
+
+#top-link-block.affix {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(8, 8, 8, 0.5);
+    border-radius: 3px;
+    color: #fff;
+}
+#top-link-block a { color: #fff; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-- ukrycia --*/
+@media (max-width: 768px) {
+	
+	.page-header h1 {
+		font-size:	25px;
+	}
+	.display-4 {
+		font-size: 2.0rem;
+		font-weight: 300;
+		line-height: 1.2;
+	}
+    .tooltip {
+        display: none !important;
+    }
+	.clockbox {
+		display: none !important;
+	}
+	
+}
+
+
+@media (min-width: 1500px){
+	.container {
+		max-width: 1490px;
+	}    
+}
