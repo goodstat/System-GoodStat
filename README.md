@@ -1,4 +1,6 @@
 # System-GoodStat
+I'm sorry - the text is automatically translated :(
+
 A free system for counting statistics for a website.
 The GoodStat system is a web application, operating in the hosting environment, counting the statistics of entries, page views and much more. After downloading you will be able to install it yourself on your hosting. The data can be read as soon as the installation is completed and pasted into a monitored page on each subpage, a special JavaScript code.
 
