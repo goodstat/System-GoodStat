@@ -1,7 +1,16 @@
 # System-GoodStat
 I'm sorry - the text is automatically translated :(
 
-A free system for counting statistics for a website.
+Hey. I would like to share with you the script I created called the GoodStat System. You will probably think that the name is a little bit overproduced and exaggerated, but please understand that I have devoted some time to this project and I sincerely strive to make this script in the future worth the name of the System.
+
+I do not write professionally in PHP language, but also know about the existence of the Node.js environment as well as Composer manager. In the GoodStat script, the above solutions are not implemented and used, it simply results from my ignorance of their use, nevertheless however, the whole works and without these probably great additions.
+
+From the very beginning, one of the main GoodStat assumptions is that the whole thing is completely free and endlessly refined with new features and improvements. You can find out about new updates using the tab: System / Update, I mean the tabs on your server, available after installing GoodStat.
+
+I also do not conceal that I am counting on the comments and suggestions on your part regarding the GoodStat System, which will show me in the future the direction of work on the whole.
+
+I wish you the greatest visits on websites monitored by GoodStat ...
+
 The GoodStat system is a web application, operating in the hosting environment, counting the statistics of entries, page views and much more. After downloading you will be able to install it yourself on your hosting. The data can be read as soon as the installation is completed and pasted into a monitored page on each subpage, a special JavaScript code.
 
 GOODSTAT SYSTEM functionality
