@@ -14,4 +14,4 @@ GOODSTAT SYSTEM functionality
 - Using the Updates section you can check if there is an update for your GoodStat system version.
 - The number of monitored domains is absolutely arbitrary.
 
-See http://goodstat.com.pl
+I invite you to http://goodstat.com.pl
