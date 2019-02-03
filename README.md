@@ -14,4 +14,25 @@ GOODSTAT SYSTEM functionality
 - Using the Updates section you can check if there is an update for your GoodStat system version.
 - The number of monitored domains is absolutely arbitrary.
 
+# Installation of the GOODSTAT SYSTEM:
+# Initial activities
+- Download the GoodStat System and unpack the downloaded package.
+- Create a Data Base specifically for the GoodStat System on your hosting.
+- Create a directory on the server and send all unzipped files from the downloaded package.
+- Go to the created directory with uploaded files and follow the instructions on the screen - you have just started the installation process.
+# Installation
+- Fill out the entire form with:
+- Your e-mail address.
+- Login - you will use it when logging in to the GoodStat System.
+- Password - also needed to log in.
+- The full address of your website, along with the protocol http: // or https: //
+- Acceptance of the Regulations is necessary to start the installation.
+- Fill in the complete Data Base form with details:
+- The name of the Database Server - this is usually: localhost.
+- Login and Password Database.
+- If everything went well and you gave all the correct values ​​- you just finished the installation and you can log in to the GoodStat System.
+- After logging in, go to the tab: System / JavaScript code and copy the entire JavaScript code visible on the left.
+- Paste the code into every subpage in your domain that you want to be monitored by the GoodStat System.
+- The data from the monitored domain will be read immediately after pasting the JavaScript code.
+
 I invite you to http://goodstat.com.pl
