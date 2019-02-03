@@ -26,6 +26,9 @@ GOODSTAT SYSTEM functionality
 - The number of monitored domains is absolutely arbitrary.
 
 # Installation of the GOODSTAT SYSTEM:
+
+https://www.youtube.com/watch?v=YThBLyCoXZk
+
 # Initial activities
 - Download the GoodStat System and unpack the downloaded package.
 - Create a Data Base specifically for the GoodStat System on your hosting.
