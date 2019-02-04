@@ -160,6 +160,12 @@ var przegladarka = przeg;
 var podstrona = location.pathname + window.location.search;
 
 var podstrona = podstrona.replace("&", "|");
+
+/*
+var podstrona = location.pathname+location;
+var podstrona = location.pathname + window.location.search;
+*/
+
  
 document.write('<img src="http://'+ ipath +'/zapis.php?podstrona='+ podstrona +'&przegladarka='+ przegladarka +'&ekran='+ ekran +'&color='+ color +'&system=' +system+ '&jezyk_przegladarki=' +jezyk_przegladarki+ '&ciaguser=' +nAgt+ '&idref=' +document.referrer+ '"style="border: none; display:none; visibility:collapse;">')
 
