@@ -193,7 +193,7 @@ for($a=0; $a<24; $a++){
 								
 										echo'
 											<div class="col-4 text-muted small">
-												<a href="http://www.infosniper.net/index.php?ip_address='.$nr_ip.'&map_source=1&overview_map=1&lang=1&map_type=1&zoom_level=7" target="_blank" data-toggle="tooltip" data-placement="right" title="kliknij, żeby zlokalizować IP">'.$nr_ip.'</a>
+												'.$nr_ip.'
 											</div>
 											<div class="col-4 text-muted small">
 												'.$ods_ip .'
