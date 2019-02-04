@@ -121,7 +121,7 @@ if(file_exists('config.php')) {
 				
 				echo'
 				<tr>
-					<td class="text-muted small">'.$data_utw.'</td> <td class="text-muted small"><a href="http://www.infosniper.net/index.php?ip_address='.$ip.'&map_source=1&overview_map=1&lang=1&map_type=1&zoom_level=7" target="_blank" data-toggle="tooltip" data-placement="right"  title="kliknij, żeby zlokalizować IP">'.$ip.'</a></td> <td class="text-muted small">'.$podstrona.'</td> <td class="text-muted small">'.$system.'</td> <td class="text-muted small">'.$przegladarki.'</td> <td class="text-muted small">'.$color.' bit.</td> <td class="text-muted small">'.$ekran.'</td> <td class="text-muted small">'.$jezyk.'</td> <td class="text-muted small">'.$ciaguser.'</td>
+					<td class="text-muted small">'.$data_utw.'</td> <td class="text-muted small">'.$ip.'</td> <td class="text-muted small">'.$podstrona.'</td> <td class="text-muted small">'.$system.'</td> <td class="text-muted small">'.$przegladarki.'</td> <td class="text-muted small">'.$color.' bit.</td> <td class="text-muted small">'.$ekran.'</td> <td class="text-muted small">'.$jezyk.'</td> <td class="text-muted small">'.$ciaguser.'</td>
 				</tr>';
 			}
 ?>
