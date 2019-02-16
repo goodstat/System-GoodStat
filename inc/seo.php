@@ -23,7 +23,7 @@
 						$stmt->execute(); //dodanie nr ip do tabeli
 		
 					}else{			
-							//zapisanie ilosci wejœæ do poszczególnych przegladarek
+							//zapisanie ilosci wejsc do poszczególnych przegladarek
 						//	$zapytanie = "SELECT * FROM $nazwa_tab WHERE strona='$ze_str' LIMIT 1";
 
 								//wykonanie zapytania
