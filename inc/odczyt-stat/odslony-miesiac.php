@@ -69,7 +69,7 @@
 				echo'
 				<tr>
 					<td class="text-muted">'.$d_roku.'</td>
-					<td class="text-muted">'.$d_miesiaca.' '.$miesiac.' '.$_GET['rok'].'</td>
+					<td class="text-muted"><a href="nr_ip.php?data_ip='.$dzien.'-'.$_GET['m'].'-'.$_GET['rok'].'&wyslij=" data-toggle="tooltip" data-placement="right" title="Zobacz wszystkie NR.IP w tym dniu">'.$d_miesiaca.' '.$miesiac.' '.$_GET['rok'].'</a></td>
 					<td class="text-muted">'.$dzien_tyg.'</td>
 					<th class="text-muted">'.$ods.'</th>
 					<td><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko'.$d_roku.'" title="Zobacz ilość Odsłon w godzinach w tym dniu"><i class="material-icons">bar_chart</i></button></td>';

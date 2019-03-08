@@ -66,7 +66,7 @@
 				
 				echo'
 				<tr>
-					<td class="text-muted">'.$dzien_roku.'</td> <td>'.$dzien.' '.$miesiac.' '.$_GET['rok'].'</td> <td class="text-muted">'.$dzien_tyg.'</td> <td><span class="label-dane">'.$wartosc.'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$dzien.' '.$miesiac.' '.$_GET['rok'].', '.$wartosc.' wiz."></div></td> <td class="text-muted"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko_'.$index.'" title="Zobacz ilość Wizyt w godzinach w tym dniu"><i class="material-icons">bar_chart</i></button></td> <th><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko_ip'.$d_roku.'" data-toggle="tooltip" data-placement="bottom" title="Zobacz ilość Odsłon, poszczególnych adresów IP"><i class="material-icons">bar_chart</i></button></th>
+					<td class="text-muted">'.$dzien_roku.'</td> <td><a href="nr_ip.php?data_ip='.$dzien.'-'.$_GET['m'].'-'.$_GET['rok'].'&wyslij=" data-toggle="tooltip" data-placement="right" title="Zobacz wszystkie NR.IP w tym dniu">'.$dzien.' '.$miesiac.' '.$_GET['rok'].'</a></td> <td class="text-muted">'.$dzien_tyg.'</td> <td><span class="label-dane">'.$wartosc.'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$dzien.' '.$miesiac.' '.$_GET['rok'].', '.$wartosc.' wiz."></div></td> <td class="text-muted"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko_'.$index.'" title="Zobacz ilość Wizyt w godzinach w tym dniu"><i class="material-icons">bar_chart</i></button></td> <th><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko_ip'.$d_roku.'" data-toggle="tooltip" data-placement="bottom" title="Zobacz ilość Odsłon, poszczególnych adresów IP"><i class="material-icons">bar_chart</i></button></th>
 				</tr>';
 				
 				
@@ -78,7 +78,7 @@
 				  
 							<!-- Modal Header -->
 							<div class="modal-header">
-								<h5 class="modal-title">Odsłony nr. IP w dniu: '.$d_miesiaca.' '.$miesiac.' '.$_GET['rok'].', dzień roku: '.$d_roku.'</h5>
+								<h5 class="modal-title">Odsłony nr. IP w dniu: '.$dzien.' '.$miesiac.' '.$_GET['rok'].', dzień roku: '.$d_roku.'</h5>
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
 							</div>
 					
