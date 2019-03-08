@@ -128,7 +128,7 @@ if(file_exists('config.php')) {
 				
 				echo'
 				<tr>
-					<td class="text-muted"><a href="http://'.$str.'" target="_blank">'.$str.'</a></td> <td class="text-muted">'.$wejscia.'</td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" title="'.$wejscia.' ods." data-toggle="tooltip" data-placement="right"></div></td> <td class="text-muted">'.$data_utw.'</td> <td><button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#szczegoly'.$id.'" title="Usuń"><i class="material-icons">delete_forever</i></button></td> 
+					<td class="text-muted"><a href="http://'.$str.'" target="_blank" data-toggle="tooltip" data-placement="right" title="Otwórz stronę w Nowym Oknie">'.$str.'</a></td> <td class="text-muted">'.$wejscia.'</td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" title="'.$wejscia.' ods." data-toggle="tooltip" data-placement="right"></div></td> <td class="text-muted">'.$data_utw.'</td> <td><button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#szczegoly'.$id.'" title="Usuń"><i class="material-icons">delete_forever</i></button></td> 
 				</tr>';
 
 					//szczegoly
