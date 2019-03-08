@@ -62,7 +62,7 @@ if (isset($_POST['wyslij_aktualizacje'])){
 						<div class="form-group">
 
 						</div>
-						<a class="btn btn-success btn-lg btn-block my-4" href="http://localhost/goodstat.com.pl/!_strona/index.php?file=goodstat_'.$wersja_new.'.zip" role="button" title="Pobierz GoodStat"><i class="material-icons">file_download</i> Pobierz <i class="material-icons">file_download</i></a>
+						<a class="btn btn-success btn-lg btn-block my-4" href="http://goodstat.com.pl/index.php?file=goodstat_'.$wersja_new.'.zip" role="button" title="Pobierz GoodStat"><i class="material-icons">file_download</i> Pobierz <i class="material-icons">file_download</i></a>
 					</fieldset>
 				</form>
 
@@ -92,6 +92,13 @@ if (isset($_POST['wyslij_aktualizacje'])){
 						</div>						
 					</fieldset>
 				</form>';
+				
+			$fp2 = fopen("http://goodstat.com.pl/!download-goodstat/wiadomosc.txt", "r");
+			$wiadomosc = fread($fp2, 2000); $wiadomosc = trim("$wiadomosc");
+			
+			echo'<div class="padding10">';
+			echo $wiadomosc;
+			echo'</div>';
 		}
 
 }else{
