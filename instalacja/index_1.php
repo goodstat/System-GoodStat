@@ -182,7 +182,7 @@ if ($zarejestrowany == 'nie'){
 			</div>
 			<div class="col-md-5 mb-3">
 				<small class="form-text text-muted">
-					Podaj adres e-mail.
+					Podaj Swój adres e-mail.
 				</small>
 			</div>		
 		</div>

@@ -24,7 +24,7 @@ $sql = "CREATE TABLE $nazwa_tab (
 
 	$stmt = $db->prepare( 
 		"INSERT INTO $nazwa_tab (id, mail, wersja, data_inst)
-		VALUES (0, '{$_POST['email']}', '1.0', ".time().")"
+		VALUES (0, '{$_POST['email']}', '1.1', ".time().")"
 	); if(@$stmt->execute()){}//dodanie danych do tabeli
 
 //##### UZYTKOWNICY	
