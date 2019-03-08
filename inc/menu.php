@@ -22,6 +22,10 @@ if(isset($_SESSION['sesja_uzyt']['zalogowany'])){
 			<li class="nav-item<?php if(strpos($_SERVER['PHP_SELF'], "historia") !==false){ echo(" active");} ?>">
 				<a class="nav-link" href="historia.php">Historia</a>
 			</li>
+			<li class="nav-item<?php if(strpos($_SERVER['PHP_SELF'], "nr_ip") !==false){ echo(" active");} ?>">
+				<a class="nav-link" href="nr_ip.php">Nr. IP</a>
+			</li>
+			
 
 			<!-- Staty Techniczne -->
 			<li class="nav-item dropdown<?php if(strpos($_SERVER['PHP_SELF'], "systemy") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "przegladarki") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "rozdzielczosc") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "liczba_kolorow") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "jezyk") !==false){ echo(" active");} ?>">
