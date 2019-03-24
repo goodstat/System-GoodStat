@@ -36,7 +36,6 @@ I invite you to look at the GoodStat demo version, here is the access data:
 - url: http://statystyki.goodstat.com.pl/
 - login: goodstat
 - password: demo
-- Movie on Youtube: https://youtu.be/EOPHLTnf3CA
 
 # Initial activities
 - Download the GoodStat System and unpack the downloaded package.
