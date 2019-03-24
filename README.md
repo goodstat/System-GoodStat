@@ -1,5 +1,5 @@
 # System-GoodStat
-I'm sorry - the text is automatically translated :(
+GoodStat works on the majority of available hosts, it also works on the latest version of PHP (7.3.3)
 
 Hey. I would like to share with you the script I created called the GoodStat System. You will probably think that the name is a little bit overproduced and exaggerated, but please understand that I have devoted some time to this project and I sincerely strive to make this script in the future worth the name of the System.
 
