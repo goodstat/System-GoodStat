@@ -24,7 +24,7 @@ $sql = "CREATE TABLE $nazwa_tab (
 
 	$stmt = $db->prepare( 
 		"INSERT INTO $nazwa_tab (id, mail, wersja, data_inst)
-		VALUES (0, '{$_POST['email']}', '1.1', ".time().")"
+		VALUES (0, '{$_POST['email']}', '1.3', ".time().")"
 	); if(@$stmt->execute()){}//dodanie danych do tabeli
 
 //##### UZYTKOWNICY	
@@ -74,7 +74,7 @@ $stmt = $db->prepare(
 //#####				#####
 	
 //##### WIZYTY i ODS£ONY	
-$rok_tworzenia = date(Y);
+$rok_tworzenia = date('Y');
 		
 for ($rok_wys = $rok_tworzenia; $rok_wys <= $rok_tworzenia + 10; $rok_wys++) {
 
@@ -280,7 +280,7 @@ $sql = "CREATE TABLE $nazwa_tab (
 	$db->exec($sql);
 
 //##### NR IP
-$rok_tworzenia = date(Y);
+$rok_tworzenia = date('Y');
 		
 for ($rok_wys = $rok_tworzenia; $rok_wys <= $rok_tworzenia + 10; $rok_wys++) {
 
@@ -304,7 +304,7 @@ $sql = "CREATE TABLE $nazwa_tab (
 
 }//end for
 
-$rok_tworzenia = date(Y);
+$rok_tworzenia = date('Y');
 		
 for ($rok_wys = $rok_tworzenia; $rok_wys <= $rok_tworzenia + 10; $rok_wys++) {
 
@@ -344,7 +344,7 @@ $sql = "CREATE TABLE $nazwa_tab (
 	
 	$db->exec($sql);
 
-$rok_tworzenia = date(Y);
+$rok_tworzenia = date('Y');
 		
 for ($rok_wys = $rok_tworzenia; $rok_wys <= $rok_tworzenia + 10; $rok_wys++) {
 				$stmt = $db->prepare(

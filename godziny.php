@@ -74,17 +74,17 @@ if(file_exists('config.php')) {
 				if($od==0){$a = -1;}	
 				$dzien = 1;
 				
-			while(list($index, $wartosc) = each( $dane_g))
+			for ($i = 0; $i < count($dane_g); $i++) 
 			{
 		
-				if($wartosc != 0){
+				if($dane_g[$i] != 0){
 					// obliczanie wysokosci slupka
-					$szer = ($wartosc / $naj_g) * 200; $szer = round($szer, 0);
+					$szer = ($dane_g[$i] / $naj_g) * 200; $szer = round($szer, 0);
 				}else{$szer = 1;}
 		
 				echo'
 				<tr>
-					<td class="text-muted">'.$index.'</td> <td><span class="label-dane">'.$wartosc.'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$wartosc.' wiz."></div></td>
+					<td class="text-muted">'.$i.'</td> <td><span class="label-dane">'.$dane_g[$i].'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$dane_g[$i].' wiz."></div></td>
 				</tr>';
 			}
 

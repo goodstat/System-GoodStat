@@ -21,6 +21,16 @@ if(file_exists('config.php')) {
 	
 <body>
 
+<!-- start statystyki stron GoodStat -->
+<script language='javascript'>
+<!--
+var ipath='localhost/statystyki_goodstat_com_pl/www_klient-PDO-2/!_strona/zapis'
+document.write('<SCR' + 'IPT LANGUAGE="JavaScript" SRC="http://'+ ipath +'/stat.js"><\/SCR' + 'IPT>');
+//-->
+</script>
+<!-- stop statystyki stron GoodStat -->
+
+
 <?php
 //--- dolaczenie plikow
 if(file_exists('config.php')) {

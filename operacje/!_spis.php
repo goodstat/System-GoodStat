@@ -11,3 +11,5 @@
 	include('wyslij_10.php');	//zmiana hasla
 	include('wyslij_11.php');	//usun logi (reset)
 	include('wyslij_12.php');	//reset hasla
+	include('wyslij_13.php');	//usun uzytkownika
+	include('wyslij_14.php');	//dodaj uzytkownika

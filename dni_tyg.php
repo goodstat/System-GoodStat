@@ -72,26 +72,26 @@ if(file_exists('config.php')) {
 				
 				if($od==0){$a = -1;}	
 				$dzien = 1;
-				
-			while(list($index, $wartosc) = each( $dane_g))
+
+			for ($i = 0; $i < count($dane_g); $i++) 
 			{
 				
-				if($index == '0'){$index = 'Niedziela';}else
-				if($index == '1'){$index = 'Poniedziałek';}else
-				if($index == '2'){$index = 'Wtorek';}else
-				if($index == '3'){$index = 'Środa';}else
-				if($index == '4'){$index = 'Czwartek';}else
-				if($index == '5'){$index = 'Piątek';}else
-				if($index == '6'){$index = 'Sobota';}
+				if($i == '0'){$tydzien[$i] = 'Niedziela';}else
+				if($i == '1'){$tydzien[$i] = 'Poniedziałek';}else
+				if($i == '2'){$tydzien[$i] = 'Wtorek';}else
+				if($i == '3'){$tydzien[$i] = 'Środa';}else
+				if($i == '4'){$tydzien[$i] = 'Czwartek';}else
+				if($i == '5'){$tydzien[$i] = 'Piątek';}else
+				if($i == '6'){$tydzien[$i] = 'Sobota';}
 				
-				if($wartosc != 0){
+				if($dane_g[$i] != 0){
 					// obliczanie wysokosci slupka
-					$szer = ($wartosc / $naj_g) * 200; $szer = round($szer, 0);
+					$szer = ($dane_g[$i] / $naj_g) * 200; $szer = round($szer, 0);
 				}else{$szer = 1;}
 		
 				echo'
 				<tr>
-					<td class="text-muted">'.$index.'</td> <td><span class="label-dane">'.$wartosc.'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$wartosc.' wiz."></div></td>
+					<td class="text-muted">'.$tydzien[$i].'</td> <td><span class="label-dane">'.$dane_g[$i].'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$dane_g[$i].' wiz."></div></td>
 				</tr>';
 			}
 

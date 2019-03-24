@@ -97,9 +97,10 @@
 							'define(\'ADRES_BAZY\', '		.	'\'' 	. 	$_POST['adres_bazy'] 	. '\''	.	'); '	.	"\r\n"	.
 							'define(\'LOGIN_BAZY\', '		.	'\'' 	. 	$_POST['login_bazy'] 	. '\''	.	'); '	.	"\r\n"	.
 							'define(\'HASLO_BAZY\', '		.	'\'' 	. 	$_POST['haslo_bazy'] 	. '\''	.	'); '	.	"\r\n"	.
-							'define(\'NAZWA_BAZY\', '		.	'\'' 	. 	$_POST['nazwa_bazy'] 	. '\''	.	'); '	.	"\r\n";
+							'define(\'NAZWA_BAZY\', '		.	'\'' 	. 	$_POST['nazwa_bazy'] 	. '\''	.	'); '	.	"\r\n"	.
+							'define(\'ADRES_STR\', '		.	'\'' 	. 	$_POST['adres_str'] 	. '\''	.	'); '	.	"\r\n";
 
-			
+		
 						//zapis danych i zamkniecie pliku
 						fwrite ($wp, $dane);
 						fclose ($wp);
