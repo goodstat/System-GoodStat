@@ -11,25 +11,95 @@
 	for($a=0; $a < count($dane); $a++){$wartosc = $dane[$a]; $suma_wartosci = $suma_wartosci + $wartosc;}
 	$sr = $suma_wartosci / $ilosc_dni; $sr = number_format ($sr, 1);
 
-	wyk_wizyt_miesiac($dane, $naj, $_GET['rok'], $_GET['m']);
+	/*
+	echo '<pre>';
+		print_r($dane);
+	echo '</pre>';
+	*/
+?>
+
+    <!-- Graphs http://www.chartjs.org/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<canvas id="myChart" style="width: 1000px;" class="chart-container"></canvas>
+	<script>
+	var ctx = document.getElementById("myChart").getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: '<?php echo $_SESSION['sesja_uzyt']['wykres']; ?>',	/* bar, line, radar, polarArea */
+		data: {
+			labels: [
+<?php
+//wys dni miesiaca
+for ($i = 0; $i < count($dane); $i++){
+	$ii = $i + 1;
+	echo "\"".$ii."\",";
+}
+?>
+			],
+			datasets: [{
+				label: 'Wizyty',
+				data: [
+<?php
+//ilosc wizyt dane
+for ($i = 0; $i < count($dane); $i++) {
 	
-	echo'<hr />';
+	echo "\"".$dane[$i]."\",";
+}
+?>
+				],
+				backgroundColor: [
+<?php
+//kolor slupka
+for ($i = 0; $i < count($dane); $i++) {
 	
+	echo "'rgba(54, 162, 235, 0.5)',";
+	
+}
+?>
+				],
+				borderColor: [
+<?php
+//kolor obramowania slupka
+for ($i = 0; $i < count($dane); $i++) {
+	
+	echo "'rgba(54, 162, 235, 1)',";
+	
+}
+?>
+				],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero:true
+					}
+				}]
+			}
+		}
+	});
+	</script>
+
+
+<?php	
 	echo'
 	<div class="table-responsive">
 		<table class="table table-striped table-hover small table-sm">
 		<tr>
 			<th>dzień roku</th> <th>data</th> <th>dzień tygodnia</th> <th>wizyty</th> <th>wykres</th> <th>wykres godzin</th> <th>nr.IP</th>
 		</tr>';
-	
+
 				reset($dane); // wskazanie na poczڴek tablicy
 				$wartosc = current($dane);
 				
 				if($od==0){$a = -1;}	
 				$dzien = 1;
 				
-			while(list($index, $wartosc) = each( $dane))
+
+for ($i = 0; $i < count($dane); $i++) 
 			{
+				
 				$a++;
 				
 				if($_GET['m'] == '1'){$miesiac = 'Styczeń'; $m = 1;}else
@@ -45,9 +115,9 @@
 				if($_GET['m'] == '11'){$miesiac = 'Listopad'; $m = 11;}else
 				if($_GET['m'] == '12'){$miesiac = 'Grudzień'; $m = 12;}
 				
-				if($wartosc != 0){
+				if($dane[$i] != 0){
 					// obliczanie wysokosci slupka
-					$szer = ($wartosc / $naj) * 200; $szer = round($szer, 0);
+					$szer = ($dane[$i] / $naj) * 200; $szer = round($szer, 0);
 				}else{$szer = 1;}
 
 				$dni_w_tygodniu 	= new DateTime($_GET['rok'].'-'.$_GET['m'].'-'.$dzien.'');
@@ -66,13 +136,13 @@
 				
 				echo'
 				<tr>
-					<td class="text-muted">'.$dzien_roku.'</td> <td><a href="nr_ip.php?data_ip='.$dzien.'-'.$_GET['m'].'-'.$_GET['rok'].'&wyslij=" data-toggle="tooltip" data-placement="right" title="Zobacz wszystkie NR.IP w tym dniu">'.$dzien.' '.$miesiac.' '.$_GET['rok'].'</a></td> <td class="text-muted">'.$dzien_tyg.'</td> <td><span class="label-dane">'.$wartosc.'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$dzien.' '.$miesiac.' '.$_GET['rok'].', '.$wartosc.' wiz."></div></td> <td class="text-muted"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko_'.$index.'" title="Zobacz ilość Wizyt w godzinach w tym dniu"><i class="material-icons">bar_chart</i></button></td> <th><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko_ip'.$d_roku.'" data-toggle="tooltip" data-placement="bottom" title="Zobacz ilość Odsłon, poszczególnych adresów IP"><i class="material-icons">bar_chart</i></button></th>
+					<td class="text-muted">'.$dzien_roku.'</td> <td><a href="nr_ip.php?data_ip='.$dzien.'-'.$_GET['m'].'-'.$_GET['rok'].'&wyslij=" data-toggle="tooltip" data-placement="right" title="Zobacz wszystkie NR.IP w tym dniu">'.$dzien.' '.$miesiac.' '.$_GET['rok'].'</a></td> <td class="text-muted">'.$dzien_tyg.'</td> <td><span class="label-dane">'.$dane[$i].'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$dzien.' '.$miesiac.' '.$_GET['rok'].', '.$dane[$i].' wiz."></div></td> <td class="text-muted"><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko_'.$dzien_roku.'" title="Zobacz ilość Wizyt w godzinach w tym dniu"><i class="material-icons">bar_chart</i></button></td> <th><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko_ip_'.$d_roku.'" data-toggle="tooltip" data-placement="bottom" title="Zobacz ilość Odsłon, poszczególnych adresów IP"><i class="material-icons">bar_chart</i></button></th>
 				</tr>';
 				
 				
 //modal ip
 				echo'
-				<div class="modal fade" id="okienko_ip'.$d_roku.'">
+				<div class="modal fade" id="okienko_ip_'.$dzien_roku.'">
 					<div class="modal-dialog modal-lg">
 						<div class="modal-content">
 				  
@@ -89,7 +159,7 @@
 									<div class="col-4"><b>odsłony</b></div>
 									<div class="col-4"><b>data</b></div>';
 								
-							$stmt_ip = $db->query("SELECT * FROM ".$_GET['rok']."_nr_ip WHERE dzien_roku=".$d_roku." ORDER BY `".$_GET['rok']."_nr_ip`.`ods` DESC LIMIT 20");
+							$stmt_ip = $db->query("SELECT * FROM ".$_GET['rok']."_nr_ip WHERE dzien_roku=".$dzien_roku." ORDER BY `".$_GET['rok']."_nr_ip`.`ods` DESC LIMIT 20");
 							if($stmt_ip->rowCount() > 0){
 							
 								while($wiersz = $stmt_ip->fetch(PDO::FETCH_ASSOC)){
@@ -139,7 +209,7 @@
 				
 					// modal
 					echo'
-					<div class="modal fade" id="okienko_'.$index.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade" id="okienko_'.$dzien_roku.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-xl">
 							<div class="modal-content">
 								<div class="modal-header">
@@ -180,14 +250,13 @@ for($a=0; $a<24; $a++){
 				$wartosc = current($dane_g);
 				
 				if($od==0){$a = -1;}	
-
-			while(list($index, $wartosc) = each( $dane_g))
+			for ($iii = 0; $iii < count($dane_g); $iii++) 
 			{
 				$a++;
 				
-				if($wartosc != 0){
+				if($dane_g[$iii] != 0){
 					// obliczanie wysokosci slupka
-					$szer = ($wartosc / $naj_g) * 200; $szer = round($szer, 0);
+					$szer = ($dane_g[$iii] / $naj_g) * 200; $szer = round($szer, 0);
 				}else{$szer = 1;}
 				
 				echo'
@@ -197,11 +266,11 @@ for($a=0; $a<24; $a++){
 							if(!$suma > 0) { echo'<div style="height: 185px; width: 0px;"></div>'; }
 							
 							echo'
-							<div class="row_slupki ttooltip" data-toggle="tooltip" data-placement="bottom" title="godzina: '.$index.'.00 - Wizyt: '.$wartosc.'" style="height: '.$szer.'px;">
+							<div class="row_slupki ttooltip" data-toggle="tooltip" data-placement="bottom" title="godzina: '.$iii.'.00 - Wizyt: '.$dane_g[$iii].'" style="height: '.$szer.'px;">
 								
 							</div>
 						</div>
-						<div class="wykres-os-x">'.$index.'</div>
+						<div class="wykres-os-x">'.$iii.'</div>
 					</div>';
 
 			}//zam while

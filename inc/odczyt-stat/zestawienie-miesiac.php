@@ -42,8 +42,10 @@
 				if($od==0){$a = -1;}	
 				$dzien = 1;
 				
-			while(list($index, $wartosc) = each( $dane))
-			{
+			for ($i = 0; $i < count($dane); $i++) {
+				
+//			while(list($index, $wartosc) = each( $dane))
+//			{
 				$a++;
 				
 				if($_GET['m'] == '1'){$miesiac = 'Styczeń'; $m = 1;}else
@@ -60,15 +62,15 @@
 				if($_GET['m'] == '12'){$miesiac = 'Grudzień'; $m = 12;}
 				
 				//wizyty
-				if($wartosc != 0){
+				if($dane[$i] != 0){
 					// obliczanie wysokosci slupka
-					$szer = ($wartosc / $naj) * 200; $szer = round($szer, 0);
+					$szer = ($dane[$i] / $naj) * 200; $szer = round($szer, 0);
 				}else{$szer = 1;}
 				
 				//odslony
-				if($dane_ods[$index] != 0){
+				if($dane_ods[$i] != 0){
 					// obliczanie wysokosci slupka
-					$szer_ods = ($dane_ods[$index] / $naj_ods) * 200; $szer_ods = round($szer_ods, 0);
+					$szer_ods = ($dane_ods[$i] / $naj_ods) * 200; $szer_ods = round($szer_ods, 0);
 				}else{$szer_ods = 1;}	
 
 				$dni_w_tygodniu 	= new DateTime($_GET['rok'].'-'.$_GET['m'].'-'.$dzien.'');
@@ -86,8 +88,8 @@
 				
 				echo'
 				<tr>
-					<td class="text-muted">'.$dzien_roku.'</td> <td><a href="nr_ip.php?data_ip='.$dzien.'-'.$_GET['m'].'-'.$_GET['rok'].'&wyslij=" data-toggle="tooltip" data-placement="right" title="Zobacz wszystkie NR.IP w tym dniu">'.$dzien.' '.$miesiac.' '.$_GET['rok'].'</a></td> <td class="text-muted">'.$dzien_tyg.'</td> <td><span class="label-dane">'.$wartosc.'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$dzien.' '.$miesiac.' '.$_GET['rok'].', '.$wartosc.' wiz."></div></td> 
-					<td><span class="label-dane">'.$dane_ods[$index].'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer_ods.'px;" data-toggle="tooltip" data-placement="right" title="'.$dzien.' '.$miesiac.' '.$_GET['rok'].', '.$dane_ods[$index].' ods."></div></td>
+					<td class="text-muted">'.$dzien_roku.'</td> <td><a href="nr_ip.php?data_ip='.$dzien.'-'.$_GET['m'].'-'.$_GET['rok'].'&wyslij=" data-toggle="tooltip" data-placement="right" title="Zobacz wszystkie NR.IP w tym dniu">'.$dzien.' '.$miesiac.' '.$_GET['rok'].'</a></td> <td class="text-muted">'.$dzien_tyg.'</td> <td><span class="label-dane">'.$dane[$i].'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$dzien.' '.$miesiac.' '.$_GET['rok'].', '.$dane[$i].' wiz."></div></td> 
+					<td><span class="label-dane">'.$dane_ods[$i].'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer_ods.'px;" data-toggle="tooltip" data-placement="right" title="'.$dzien.' '.$miesiac.' '.$_GET['rok'].', '.$dane_ods[$i].' ods."></div></td>
 				</tr>';
 						
 						

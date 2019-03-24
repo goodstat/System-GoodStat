@@ -1,4 +1,6 @@
 <?php
+$lifetime = (60 * 60 * 24) * 7; //### (60 * 60) * wartosc w godzinach np. 7 - znaczy to 7 dni
+session_set_cookie_params($lifetime,"/",$_SERVER['SERVER_NAME']);
 session_start();
 
 	if($_SERVER['HTTP_CLIENT_IP']){
@@ -14,7 +16,8 @@ session_start();
 
 if(!isset($_SESSION['sesja_uzyt']))
 {
-	$_SESSION['sesja_uzyt'] 						= array();	
+	$_SESSION['sesja_uzyt'] 				= array();	
+	$_SESSION['sesja_uzyt']['wykres'] 		= 'bar'; // bar, line, radar, polarArea
 }
 
 //#### logowanie
@@ -46,5 +49,14 @@ if(isset($_POST['wyslij_loguj'])){
 				}else{
 					$wynik_logowania = 'zle';
 				}
+}
+
+//#### zmien wykres
+if(isset($_POST['wyslij_wykres'])){
+	
+	$rodz_wykresu = $_POST['rodz_wykresu']; 	
+
+	$_SESSION['sesja_uzyt']['wykres'] 		= $rodz_wykresu;
+
 }
 

@@ -1,7 +1,7 @@
 <?php
 			//###################### Z JAKIEJ KLIKNIETO STRONY
 				//$url = trim($url);
-				$adres_www = trim($adres_www);
+				$adres_www = ADRES_STR; $adres_www = str_replace("http://", "", $adres_www);
 			
 				// parsowanie adresu
 				$idref_parse = parse_url($idref);

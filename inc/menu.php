@@ -11,13 +11,13 @@
 if(isset($_SESSION['sesja_uzyt']['zalogowany'])){
 ?>
 			<li class="nav-item<?php if(strpos($_SERVER['PHP_SELF'], "zestawienie") !==false){ echo(" active");} ?>">
-				<a class="nav-link" href="zestawienie.php?rok=<?php echo date(Y); ?>">Zestawienie</a>
+				<a class="nav-link" href="zestawienie.php?rok=<?php echo date('Y'); ?>">Zestawienie</a>
 			</li>
 			<li class="nav-item<?php if(strpos($_SERVER['PHP_SELF'], "wizyty") !==false){ echo(" active");} ?>">
-				<a class="nav-link" href="wizyty.php?rok=<?php echo date(Y); ?>">Wizyty</a>
+				<a class="nav-link" href="wizyty.php?rok=<?php echo date('Y'); ?>">Wizyty</a>
 			</li>
 			<li class="nav-item<?php if(strpos($_SERVER['PHP_SELF'], "odslony") !==false){ echo(" active");} ?>">
-				<a class="nav-link" href="odslony.php?rok=<?php echo date(Y); ?>">Odsłony</a>
+				<a class="nav-link" href="odslony.php?rok=<?php echo date('Y'); ?>">Odsłony</a>
 			</li>
 			<li class="nav-item<?php if(strpos($_SERVER['PHP_SELF'], "historia") !==false){ echo(" active");} ?>">
 				<a class="nav-link" href="historia.php">Historia</a>
@@ -54,23 +54,25 @@ if(isset($_SESSION['sesja_uzyt']['zalogowany'])){
 			</li>
 			
 			<!-- Staty SEO -->
-			<li class="nav-item dropdown<?php if(strpos($_SERVER['PHP_SELF'], "zrodlo") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "roboty") !==false){ echo(" active");} ?>">
+			<li class="nav-item dropdown<?php if(strpos($_SERVER['PHP_SELF'], "zrodlo") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "roboty") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "head") !==false){ echo(" active");} ?>">
 				<a class="nav-link dropdown-toggle" href="#" id="staty_globalne" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					SEO
 				</a>
 				<div class="dropdown-menu" aria-labelledby="staty_globalne">
 					<a class="dropdown-item<?php if(strpos($_SERVER['PHP_SELF'], "zrodlo") !==false){ echo(" active");} ?>" href="zrodlo.php">Źródło</a>
 					<a class="dropdown-item<?php if(strpos($_SERVER['PHP_SELF'], "roboty") !==false){ echo(" active");} ?>" href="roboty.php">Roboty</a>
+					<a class="dropdown-item<?php if(strpos($_SERVER['PHP_SELF'], "head") !==false){ echo(" active");} ?>" href="head.php">Sekcja Head</a>
 				</div>
 			</li>
 			
 			<!-- System GoodStat -->
-			<li class="nav-item dropdown<?php if(strpos($_SERVER['PHP_SELF'], "kod_javascript") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "zm_hasla") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "logi") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "baza_danych") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "aktualizacja") !==false){ echo(" active");} ?>">
+			<li class="nav-item dropdown<?php if(strpos($_SERVER['PHP_SELF'], "kod_javascript") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "uzytkownicy") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "zm_hasla") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "logi") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "baza_danych") !==false){ echo(" active");}elseif(strpos($_SERVER['PHP_SELF'], "aktualizacja") !==false){ echo(" active");} ?>">
 				<a class="nav-link dropdown-toggle" href="#" id="staty_globalne" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					System
 				</a>
 				<div class="dropdown-menu" aria-labelledby="staty_globalne">
 					<a class="dropdown-item<?php if(strpos($_SERVER['PHP_SELF'], "kod_javascript") !==false){ echo(" active");} ?>" href="kod_javascript.php">Kod JavaScript</a>
+					<a class="dropdown-item<?php if(strpos($_SERVER['PHP_SELF'], "uzytkownicy") !==false){ echo(" active");} ?>" href="uzytkownicy.php">Użytkownicy</a>
 					<a class="dropdown-item<?php if(strpos($_SERVER['PHP_SELF'], "zm_hasla") !==false){ echo(" active");} ?>" href="zm_hasla.php">Zmiana Hasła</a>
 					<a class="dropdown-item<?php if(strpos($_SERVER['PHP_SELF'], "logi") !==false){ echo(" active");} ?>" href="logi.php">Dziennik Systemu</a>
 					<a class="dropdown-item<?php if(strpos($_SERVER['PHP_SELF'], "baza_danych") !==false){ echo(" active");} ?>" href="baza_danych.php">Baza Danych</a>

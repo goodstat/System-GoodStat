@@ -11,12 +11,71 @@
 	$suma_wartosci = 0;
 	for($a=0; $a < count($dane); $a++){$wartosc = $dane[$a]; $suma_wartosci = $suma_wartosci + $wartosc;}
 	$sr = $suma_wartosci / $ilosc_dni; $sr = number_format ($sr, 1);
-
-	wyk_odslon_miesiac($dane, $naj, $_GET['rok'], $_GET['m']);
-	
-	echo'<hr />';
 ?>
+
+    <!-- Graphs http://www.chartjs.org/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+	<canvas id="myChart" style="width: 1000px;" class="chart-container"></canvas>
+
+	<script>
+	var ctx = document.getElementById("myChart").getContext('2d');
+	var myChart = new Chart(ctx, {
+		type: '<?php echo $_SESSION['sesja_uzyt']['wykres']; ?>',	/* bar, line, radar, polarArea */
+		data: {
+			labels: [
+<?php
+//wys dni miesiaca
+for ($i = 0; $i < count($dane); $i++){
+	$ii = $i + 1;
+	echo "\"".$ii."\",";
+}
+?>
+			],
+			datasets: [{
+				label: 'Odsłony',
+				data: [
+<?php
+//ilosc wizyt dane
+for ($i = 0; $i < count($dane); $i++) {
 	
+	echo "\"".$dane[$i]."\",";
+}
+?>
+				],
+				backgroundColor: [
+<?php
+//kolor slupka
+for ($i = 0; $i < count($dane); $i++) {
+	
+	echo "'rgba(54, 162, 235, 0.5)',";
+	
+}
+?>
+				],
+				borderColor: [
+<?php
+//kolor obramowania slupka
+for ($i = 0; $i < count($dane); $i++) {
+	
+	echo "'rgba(54, 162, 235, 1)',";
+	
+}
+?>
+				],
+				borderWidth: 1
+			}]
+		},
+		options: {
+			scales: {
+				yAxes: [{
+					ticks: {
+						beginAtZero:true
+					}
+				}]
+			}
+		}
+	});
+	</script>	
 
 		
 <div class="table-responsive">
@@ -35,7 +94,6 @@
 <?php
 	
 	$dzien_od 		= $dni_w_miesiacu->format("z");	//Dzień roku (Zaczynając od 0) 0 aż do 365
-	
 	
 	$stmt = $db->query("SELECT * FROM ".$_GET['rok']."_wiz_ods LIMIT ".$dzien_od.", ".$ilosc_dni."");
 	$stmt->rowCount();
@@ -69,7 +127,7 @@
 				echo'
 				<tr>
 					<td class="text-muted">'.$d_roku.'</td>
-					<td class="text-muted"><a href="nr_ip.php?data_ip='.$dzien.'-'.$_GET['m'].'-'.$_GET['rok'].'&wyslij=" data-toggle="tooltip" data-placement="right" title="Zobacz wszystkie NR.IP w tym dniu">'.$d_miesiaca.' '.$miesiac.' '.$_GET['rok'].'</a></td>
+					<td class="text-muted"><a href="nr_ip.php?data_ip='.$d_miesiaca.'-'.$_GET['m'].'-'.$_GET['rok'].'&wyslij=" data-toggle="tooltip" data-placement="right" title="Zobacz wszystkie NR.IP w tym dniu">'.$d_miesiaca.' '.$miesiac.' '.$_GET['rok'].'</a></td>
 					<td class="text-muted">'.$dzien_tyg.'</td>
 					<th class="text-muted">'.$ods.'</th>
 					<td><button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#okienko'.$d_roku.'" title="Zobacz ilość Odsłon w godzinach w tym dniu"><i class="material-icons">bar_chart</i></button></td>';
@@ -118,14 +176,13 @@ for($a=0; $a<24; $a++){
 				$wartosc = current($dane_g);
 				
 				if($od==0){$a = -1;}	
-
-			while(list($index, $wartosc) = each( $dane_g))
+			for ($iii = 0; $iii < count($dane_g); $iii++) 
 			{
 				$a++;
 				
-				if($wartosc != 0){
+				if($dane_g[$iii] != 0){
 					// obliczanie wysokosci slupka
-					$szer = ($wartosc / $naj_g) * 200; $szer = round($szer, 0);
+					$szer = ($dane_g[$iii] / $naj_g) * 200; $szer = round($szer, 0);
 				}else{$szer = 1;}
 				
 				echo'
@@ -135,11 +192,11 @@ for($a=0; $a<24; $a++){
 							if(!$suma > 0) { echo'<div style="height: 185px; width: 0px;"></div>'; }
 							
 							echo'
-							<div class="row_slupki ttooltip" data-toggle="tooltip" data-placement="bottom" title="godzina: '.$index.'.00 - odsłon: '.$wartosc.'" style="height: '.$szer.'px;">
+							<div class="row_slupki ttooltip" data-toggle="tooltip" data-placement="bottom" title="godzina: '.$iii.'.00 - odsłon: '.$dane_g[$iii].'" style="height: '.$szer.'px;">
 								
 							</div>
 						</div>
-						<div class="wykres-os-x">'.$index.'</div>
+						<div class="wykres-os-x">'.$iii.'</div>
 					</div>';
 
 			}//zam while

@@ -64,39 +64,38 @@
 				
 				if($od==0){$a = -1;}	
 
-			while(list($index, $wartosc) = each( $dane))
-			{
+			for ($i = 0; $i < count($dane); $i++) {
 				$a++;
 				
-				if($index == '0'){$miesiac = 'Styczeń'; $m = 1;}
-				if($index == '1'){$miesiac = 'Luty'; $m = 2;}
-				if($index == '2'){$miesiac = 'Marzec'; $m = 3;}
-				if($index == '3'){$miesiac = 'Kwiecień'; $m = 4;}
-				if($index == '4'){$miesiac = 'Maj'; $m = 5;}
-				if($index == '5'){$miesiac = 'Czerwiec'; $m = 6;}
-				if($index == '6'){$miesiac = 'Lipiec'; $m = 7;}
-				if($index == '7'){$miesiac = 'Sierpień'; $m = 8;}
-				if($index == '8'){$miesiac = 'Wrzesień'; $m = 9;}
-				if($index == '9'){$miesiac = 'Październik'; $m = 10;}
-				if($index == '10'){$miesiac = 'Listopad'; $m = 11;}
-				if($index == '11'){$miesiac = 'Grudzień'; $m = 12;}
+				if($i == '0'){$miesiac = 'Styczeń'; $m = 1;}
+				if($i == '1'){$miesiac = 'Luty'; $m = 2;}
+				if($i == '2'){$miesiac = 'Marzec'; $m = 3;}
+				if($i == '3'){$miesiac = 'Kwiecień'; $m = 4;}
+				if($i == '4'){$miesiac = 'Maj'; $m = 5;}
+				if($i == '5'){$miesiac = 'Czerwiec'; $m = 6;}
+				if($i == '6'){$miesiac = 'Lipiec'; $m = 7;}
+				if($i == '7'){$miesiac = 'Sierpień'; $m = 8;}
+				if($i == '8'){$miesiac = 'Wrzesień'; $m = 9;}
+				if($i == '9'){$miesiac = 'Październik'; $m = 10;}
+				if($i == '10'){$miesiac = 'Listopad'; $m = 11;}
+				if($i == '11'){$miesiac = 'Grudzień'; $m = 12;}
 				
 				//wizyty
-				if($wartosc != 0){
+				if($dane[$i] != 0){
 					// obliczanie wysokosci slupka
-					$szer = ($wartosc / $naj) * 200; $szer = round($szer, 0);
+					$szer = ($dane[$i] / $naj) * 200; $szer = round($szer, 0);
 				}else{$szer = 1;}
 				
 				//odslony
-				if($dane_ods[$index] != 0){
+				if($dane_ods[$i] != 0){
 					// obliczanie wysokosci slupka
-					$szer_ods = ($dane_ods[$index] / $naj_ods) * 200; $szer_ods = round($szer_ods, 0);
+					$szer_ods = ($dane_ods[$i] / $naj_ods) * 200; $szer_ods = round($szer_ods, 0);
 				}else{$szer_ods = 1;}				
 				
 			echo'
 			<tr>
-				<td class="text-muted">'.$_GET['rok'].'</td> <td class="text-muted"><a href="zestawienie.php?rok='.$_GET['rok'].'&m='.$m.'" role="button" data-toggle="tooltip" data-placement="right" title="Zobacz zestawienie Wizyt i Odsłon w miesiącu: '.$miesiac.'">'.$miesiac.'</a></td> <td><span class="label-dane">'.$wartosc.'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$miesiac.' '.$_GET['rok'].', '.$wartosc.' wiz."></div></td>
-				<td><span class="label-dane">'.$dane_ods[$index].'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer_ods.'px;" data-toggle="tooltip" data-placement="right" title="'.$miesiac.' '.$_GET['rok'].', '.$dane_ods[$index].' ods."></div></td>
+				<td class="text-muted">'.$_GET['rok'].'</td> <td class="text-muted"><a href="zestawienie.php?rok='.$_GET['rok'].'&m='.$m.'" role="button" data-toggle="tooltip" data-placement="right" title="Zobacz zestawienie Wizyt i Odsłon w miesiącu: '.$miesiac.'">'.$miesiac.'</a></td> <td><span class="label-dane">'.$dane[$i].'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer.'px;" data-toggle="tooltip" data-placement="right" title="'.$miesiac.' '.$_GET['rok'].', '.$dane[$i].' wiz."></div></td>
+				<td><span class="label-dane">'.$dane_ods[$i].'</span></td> <td><div class="row_slupki_poziom ttt" style="width: '.$szer_ods.'px;" data-toggle="tooltip" data-placement="right" title="'.$miesiac.' '.$_GET['rok'].', '.$dane_ods[$i].' ods."></div></td>
 			</tr>';
 
 			}//zam while
