@@ -3,10 +3,10 @@ $lifetime = (60 * 60 * 24) * 7; //### (60 * 60) * wartosc w godzinach np. 7 - zn
 session_set_cookie_params($lifetime,"/",$_SERVER['SERVER_NAME']);
 session_start();
 
-	if($_SERVER['HTTP_CLIENT_IP']){
+	if(isset($_SERVER['HTTP_CLIENT_IP'])){
 		$nr_ip = $_SERVER['HTTP_CLIENT_IP'];
 	}
-	else if($_SERVER['HTTP_X_FORWARDED_FOR']){
+	else if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])){
 		$nr_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 	}else{
 		$nr_ip = $_SERVER['REMOTE_ADDR']; 
